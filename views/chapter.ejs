@@ -1,0 +1,22 @@
+<%- include("partials/header", { title: `${book.book} - Chapter ${chapterNum}` }) %>
+
+<h1><%= book.book %> - Chapter <%= chapterNum %></h1>
+
+<div class="verses">
+  <% Object.keys(chapter).forEach(v => { %>
+    <p><span class="verse-num"><%= v %></span> <%= chapter[v] %></p>
+  <% }) %>
+</div>
+
+<div class="nav">
+  <% if (prev) { %>
+    <a class="btn" href="/book/<%= book.book.toLowerCase() %>/<%= prev %>">⬅ Chapter <%= prev %></a>
+  <% } %>
+  <% if (next) { %>
+    <a class="btn" href="/book/<%= book.book.toLowerCase() %>/<%= next %>">Chapter <%= next %> ➡</a>
+  <% } %>
+</div>
+
+<a class="back" href="/book/<%= book.book.toLowerCase() %>">⬅ Back to Chapters</a>
+
+<%- include("partials/footer") %>
