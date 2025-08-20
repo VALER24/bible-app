@@ -1,0 +1,10 @@
+<%- include("partials/header", { title: "Bible App" }) %>
+
+<h1>Select a Book</h1>
+<div class="list">
+  <% books.forEach(book => { %>
+    <a class="btn" href="/book/<%= book %>"><%= book.charAt(0).toUpperCase() + book.slice(1) %></a>
+  <% }) %>
+</div>
+
+<%- include("partials/footer") %>
