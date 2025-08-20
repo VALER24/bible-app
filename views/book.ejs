@@ -1,0 +1,13 @@
+<%- include("partials/header", { title: book.book }) %>
+
+<h1><%= book.book %></h1>
+<h2>Select a Chapter</h2>
+<div class="list">
+  <% chapters.forEach(ch => { %>
+    <a class="btn" href="/book/<%= book.book.toLowerCase() %>/<%= ch %>">Chapter <%= ch %></a>
+  <% }) %>
+</div>
+
+<a class="back" href="/">⬅ Back to Books</a>
+
+<%- include("partials/footer") %>
